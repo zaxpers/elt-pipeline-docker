@@ -10,4 +10,5 @@ COPY crontab.txt /etc/cron.d/cron-job
 RUN chmod 0644 /etc/cron.d/cron-job
 RUN crontab /etc/cron.d/cron-job 
 
-CMD [ "cron","-f" ]
+CMD cron -f
+#service cron start && tail -f /var/log/syslog
